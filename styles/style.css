@@ -29,7 +29,7 @@ header {
 }
 
 header .logo {
-    width: 80px;
+    width: 200px;
 }
 
 nav {
@@ -42,6 +42,7 @@ nav a {
     margin: 0 auto;
     text-decoration: none;
     padding: 35px;
+    color: black;
 }
 
 nav a:hover {
@@ -54,6 +55,52 @@ nav a:hover {
     justify-self: center;
     align-self: center;
 }
+
+/* Project links in Nav */
+/* Dropdown Button */
+.dropbtn {
+    padding: 35px;
+    font-size: 22px;
+    border: none;
+    background-color: #D5A021;
+    font-family: "Dancing Script";
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    margin-left: 60px;
+    background-color: #D5A021;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #396E94;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #396E94; color: #FB62F6;}
+
  /* Home Page CSS */
 .grid {
     text-align: center;
@@ -114,6 +161,11 @@ main section img {
     grid-row: 3/4;
 }
 
+.Batter {
+    grid-column: 5/7;
+    grid-row: 3/4;
+}
+
 /*About Me CSS*/
 .card-img-abt {
     border: 10px solid #D5A021;
@@ -155,6 +207,17 @@ main section img {
     font-size: 22px;
     margin-top: 60px;
 }
+/* .resume{
+    grid-column: 8/9;
+    grid-row: 2/3;
+    margin-top: 10px;
+}
+.card-img-resume {
+    border: 10px solid #D5A021;
+    transition: transform 0.5s;
+    box-shadow: 5px 5px 10px #6f7364;
+    width: 100%;
+} */
 /*Project CSS*/
 
 .projVid {
@@ -211,7 +274,7 @@ main section img {
     padding: auto;
 }
 
-.ta-info h1, .ta-specific h1 {
+.ta-info h2, .ta-specific h2 {
     font-family: "Dancing Script";
 }
 

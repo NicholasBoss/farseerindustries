@@ -198,7 +198,7 @@ main section img {
     margin-top: 60px;
 }
 
-.organ {
+.organabt {
     grid-column: 2/4;
     grid-row: 4/5;
     margin-top: 10px;
@@ -309,7 +309,7 @@ footer h3 a:hover {
 }
 
 /* Hobby CSS */
-.gaming, .organ {
+.gaming, .organhob {
     margin: 200px 0;
 }
 
@@ -326,7 +326,7 @@ footer h3 a:hover {
     width: 400px;
 }
 
-.organ {
+.organhob {
     grid-column: 8/11;
     grid-row: 1/3;
 }
@@ -421,7 +421,7 @@ footer h3 a:hover {
         font-size: 18px;
         margin-top: 60px;
     }
-    .organ {
+    .organabt {
         grid-column: 1/3;
         grid-row: 3/4;
         margin-top: 10px;

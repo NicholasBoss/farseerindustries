@@ -354,7 +354,7 @@ footer h3 a:hover {
 }
 
 .hobDesc {
-    grid-column: 4/9;
+    grid-column: 3/9;
     grid-row: 5/6;
     margin-top: 100px;
     width: 100%;

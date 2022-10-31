@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Document</title>
+</head>
+<script>
+  function validateForm() {
+    let x = document.forms["myForm"]["name"].value;
+    let y = document.forms["myForm"]["password"].value
+    if (x == ""){
+      alert("Name must be filled out");
+      return false;
+    } else if (y == ""){
+      alert("Password must be filled out");
+      return false;
+    }
+    else if (x == "admin" && y == "admin"){ // if login successful open next page
+      alert("Login Successful"); 
+      // close alert box
+      
+      return true;
+      
+    } else { // if login unsuccessful, clear fields, set cursor in username field and alert user
+      alert("Login Failed");
+      document.getElementById("name").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("name").focus();
+      return false;
+    }
+  }
+  </script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
+  <script>
+	"use strict";
+
+
+	function loadPage(pwd) {
+
+		var hash= pwd;
+		hash= Sha1.hash(pwd);
+		var url= hash + "/conceptworkshop.html";
+
+		$.ajax({
+			url : url,
+			dataType : "html",
+			success : function(data) {
+
+				window.location= url;
+
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+
+
+				parent.location.hash= hash;
+
+				//$("#wrongPassword").show();
+				$("#password").attr("placeholder","wrong password");
+				$("#password").val("");
+			}
+		});
+	}
+
+
+	$("#loginbutton").on("click", function() {
+		loadPage($("#password").val());
+	});
+	$("#password").keypress(function(e) {
+		if (e.which == 13) {
+
+			loadPage($("#password").val());
+		}
+	});
+	$("#password").focus();
+
+  </script>
+<body>
+    <form name="myForm" onsubmit="return validateForm()">
+        <div class="imgcontainer">
+          <img src="./assets/farseerindustrieslogo.png" alt="Avatar" class="avatar">
+        </div>
+        <h1>Concept Workshop Access</h1>
+        <div class="container">
+          <label for="name"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="name" required>
+          <br>
+          <label for="psw"><b>Password</b></label>
+          <input id="password" type="password" placeholder="Enter Password" name="password" required>
+          <br>
+          <button id="loginbutton" class="submit" type="submit">Login</button>
+        </div>
+      </form>
+      
+</body>
+</html>

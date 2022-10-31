@@ -124,11 +124,15 @@ img {
 
 	$("#loginbutton").on("click", function() {
 		loadPage($("#password").val());
+		// clear password field
+		$("#password").val("");
 	});
 	$("#password").keypress(function(e) {
 		if (e.which == 13) {
 
 			loadPage($("#password").val());
+			// clear password field
+			$("#password").val("");
 		}
 	});
 	$("#password").focus();

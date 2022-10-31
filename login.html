@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title></title>
+<title>CW Login</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -15,6 +16,15 @@ body {
 	background-color: #87F1FF;
 }
 
+h1.code {
+	font-size: 2em;
+	text-align: center;
+}
+
+h1.name {
+	font-size: 1.5em;
+	text-align: center;
+}
 .box {
 	border-radius: 3px;
 	background: #D5A021; margin: auto; padding: 12px;
@@ -75,7 +85,8 @@ img {
 		<div class="horizontal">
 			<div class="vertical">
 				<div class="box">
-                    <h1>Concept Workshop Access</h1>
+					<h1 class="code">CIT 111</h1>
+                    <h1 class="name">Concept Workshop Access</h1>
 					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
 					<button id="loginbutton" type="button">Enter</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>

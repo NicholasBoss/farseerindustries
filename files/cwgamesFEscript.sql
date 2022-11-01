@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS `cwgames`.`games` (
   `releaseDate` DATE NOT NULL,
   `ratingId` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`gameId`),
-  INDEX `fk_game_rating1_idx` (`ratingId` ASC) VISIBLE,
-  CONSTRAINT `fk_game_rating1`
+  INDEX `fk_game_ratings1_idx` (`ratingId` ASC) VISIBLE,
+  CONSTRAINT `fk_game_ratings1`
     FOREIGN KEY (`ratingId`)
     REFERENCES `cwgames`.`ratings` (`ratingId`)
     ON DELETE NO ACTION
@@ -111,23 +111,37 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cwgames`.`gameOwners`
+-- Table `cwgames`.`gameplatforms`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cwgames`.`gameOwners` ;
+DROP TABLE IF EXISTS `cwgames`.`gameplatforms` ;
 
-CREATE TABLE IF NOT EXISTS `cwgames`.`gameOwners` (
+CREATE TABLE IF NOT EXISTS `cwgames`.`gameplatforms` (
   `gameId` INT UNSIGNED NOT NULL,
+  `platformId` INT UNSIGNED NOT NULL,
   `ownerId` INT UNSIGNED NOT NULL,
+  `priceId` INT UNSIGNED NOT NULL,
   `hasPlayed` TINYINT NOT NULL,
-  PRIMARY KEY (`gameId`, `ownerId`),
-  INDEX `fk_gameowner_owner1_idx` (`ownerId` ASC) VISIBLE,
-  INDEX `fk_gameowner_game_idx` (`gameId` ASC) VISIBLE,
-  CONSTRAINT `fk_gameowner_game`
+  PRIMARY KEY (`gameId`, `platformId`, `ownerId`),
+  INDEX `fk_gameplatforms_platforms1_idx` (`platformId` ASC) VISIBLE,
+  INDEX `fk_gameplatforms_game_idx` (`gameId` ASC) VISIBLE,
+  INDEX `fk_gameplatforms_prices1_idx` (`priceId` ASC) VISIBLE,
+  INDEX `fk_gameplatforms_owners1_idx` (`ownerId` ASC) VISIBLE,
+  CONSTRAINT `fk_gameplatforms_game`
     FOREIGN KEY (`gameId`)
     REFERENCES `cwgames`.`games` (`gameId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_gameowner_owner1`
+  CONSTRAINT `fk_gameplatforms_platforms1`
+    FOREIGN KEY (`platformId`)
+    REFERENCES `cwgames`.`platforms` (`platformId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_gameplatforms_prices1`
+    FOREIGN KEY (`priceId`)
+    REFERENCES `cwgames`.`prices` (`priceId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_gameplatforms_owners1`
     FOREIGN KEY (`ownerId`)
     REFERENCES `cwgames`.`owners` (`ownerId`)
     ON DELETE NO ACTION
@@ -136,79 +150,48 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `cwgames`.`gamePlatforms`
+-- Table `cwgames`.`gamecompanies`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `cwgames`.`gamePlatforms` ;
+DROP TABLE IF EXISTS `cwgames`.`gamecompanies` ;
 
-CREATE TABLE IF NOT EXISTS `cwgames`.`gamePlatforms` (
-  `gameId` INT UNSIGNED NOT NULL,
-  `platformId` INT UNSIGNED NOT NULL,
-  `priceId` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`gameId`, `platformId`),
-  INDEX `fk_gameplatform_platform1_idx` (`platformId` ASC) VISIBLE,
-  INDEX `fk_gameplatform_game1_idx` (`gameId` ASC) VISIBLE,
-  INDEX `fk_game_platform_price1_idx` (`priceId` ASC) VISIBLE,
-  CONSTRAINT `fk_gameplatform_game1`
-    FOREIGN KEY (`gameId`)
-    REFERENCES `cwgames`.`games` (`gameId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_gameplatform_platform1`
-    FOREIGN KEY (`platformId`)
-    REFERENCES `cwgames`.`platforms` (`platformId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_game_platform_price1`
-    FOREIGN KEY (`priceId`)
-    REFERENCES `cwgames`.`prices` (`priceId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `cwgames`.`gameGenres`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `cwgames`.`gameGenres` ;
-
-CREATE TABLE IF NOT EXISTS `cwgames`.`gameGenres` (
-  `gameId` INT UNSIGNED NOT NULL,
-  `genreId` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`gameId`, `genreId`),
-  INDEX `fk_gamegenre_genre1_idx` (`genreId` ASC) VISIBLE,
-  INDEX `fk_gamegenre_game1_idx` (`gameId` ASC) VISIBLE,
-  CONSTRAINT `fk_gamegenre_game1`
-    FOREIGN KEY (`gameId`)
-    REFERENCES `cwgames`.`games` (`gameId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_gamegenre_genre1`
-    FOREIGN KEY (`genreId`)
-    REFERENCES `cwgames`.`genres` (`genreId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `cwgames`.`gameCompanies`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `cwgames`.`gameCompanies` ;
-
-CREATE TABLE IF NOT EXISTS `cwgames`.`gameCompanies` (
+CREATE TABLE IF NOT EXISTS `cwgames`.`gamecompanies` (
   `gameId` INT UNSIGNED NOT NULL,
   `companyId` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`gameId`, `companyId`),
-  INDEX `fk_gamecompany_company1_idx` (`companyId` ASC) VISIBLE,
-  INDEX `fk_gamecompany_game1_idx` (`gameId` ASC) VISIBLE,
-  CONSTRAINT `fk_gamecompany_game1`
+  INDEX `fk_gamecompanies_companies1_idx` (`companyId` ASC) VISIBLE,
+  INDEX `fk_gamecompanies_game1_idx` (`gameId` ASC) VISIBLE,
+  CONSTRAINT `fk_gamecompanies_game1`
     FOREIGN KEY (`gameId`)
     REFERENCES `cwgames`.`games` (`gameId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_gamecompany_company1`
+  CONSTRAINT `fk_gamecompanies_companies1`
     FOREIGN KEY (`companyId`)
     REFERENCES `cwgames`.`companies` (`companyId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cwgames`.`gamegenres`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `cwgames`.`gamegenres` ;
+
+CREATE TABLE IF NOT EXISTS `cwgames`.`gamegenres` (
+  `gameId` INT UNSIGNED NOT NULL,
+  `genreId` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`gameId`, `genreId`),
+  INDEX `fk_gamegenres_genres1_idx` (`genreId` ASC) VISIBLE,
+  INDEX `fk_gamegenres_game1_idx` (`gameId` ASC) VISIBLE,
+  CONSTRAINT `fk_gamegenres_game1`
+    FOREIGN KEY (`gameId`)
+    REFERENCES `cwgames`.`games` (`gameId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_gamegenres_genres1`
+    FOREIGN KEY (`genreId`)
+    REFERENCES `cwgames`.`genres` (`genreId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

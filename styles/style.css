@@ -22,31 +22,33 @@ h2 {
 }
 
 header {
-    display: grid;
-    grid-template-columns: 150px auto;
     text-align: center;
     background-color: #D5A021;
     font-family: "Dancing Script";
 }
 
 header .logo {
+    float: left;
     width: 200px;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
+.topnav {
+    background-color: inherit;
+    overflow: hidden;
 }
 
-nav a {
+.topnav a {
+    float: left;
+    display: block;
     text-align: center;
     margin: 0 auto;
     text-decoration: none;
     padding: 35px;
     color: black;
+    font-size: 22px;
 }
 
-nav a:hover {
+.topnav a:hover {
     color: #FB62F6;
     background-color: #396E94;
 }
@@ -59,20 +61,21 @@ nav a:hover {
 
 /* Project links in Nav */
 /* Dropdown Button */
-.dropbtn {
-    padding: 35px;
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropbtn, .dropdown {
+    padding: 17px 16px;
     font-size: 22px;
     border: none;
     background-color: #D5A021;
     font-family: "Dancing Script";
+    margin: 0;
   }
   
   /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    width: 15%;
-  }
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
@@ -82,24 +85,37 @@ nav a:hover {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 2px;
   }
   
   /* Links inside the dropdown */
   .dropdown-content a {
+    float: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
+    border : 0.5px solid black;
     display: block;
+    border-radius: 2px;
+    transition: transform 0.2s;
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #396E94;}
+  .dropdown-content a:hover {background-color: #396E94;
+    color: #FB62F6;
+    transform: scale(1.1);
+  }
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #396E94; color: #FB62F6;}
+  
+
+  .topnav .hicon {
+    display: none;
+  }
 
  /* Home Page CSS */
 .grid {
@@ -294,13 +310,19 @@ footer {
     color: #87F1FF;
     padding: 25px 50px;
     margin-top: 200px;
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 footer a {
     text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    color: #FB62F6;
+    background-color: #396E94;
 }
 
 footer h3 a:hover {
@@ -389,29 +411,39 @@ footer h3 a:hover {
         display: block;
         height: auto;
     }
-    header, footer {
+    header {
         width: 100%;
     }
-    nav, footer {
-        flex-direction: column;
-    }
-    nav a {
-        display: block;
-        padding: 10px;
-    }
-    .dropbtn{
-        text-align: center;
-        transform: translate(160%,0);
-    }
-    .dropdown-content {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
         display: none;
-        position: absolute;
-        background-color: #D5A021;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        transform: translate(120%,0);
       }
+      .topnav a.hicon {
+        float: right;
+        display: block;
+      }
+      .topnav.responsive {position: relative;}
+      .topnav.responsive a.hicon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .topnav.responsive .dropdown {float: none;}
+      .topnav.responsive .dropdown-content {position: relative;}
+      .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
     .HolesAreBad, .HeadCounter, .SQL { 
         margin: 50px auto;
         width: 60%;

@@ -7,6 +7,7 @@
     <title>About Me</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css">
+    <script type="text/javascript" src="./scripts/navfunction.js"></script>
 </head>
 <body>
     <div id="content">
@@ -16,8 +17,10 @@
                     <img class="logo" src="./assets/farseerindustrieslogo.png" alt="Farseer Industries">
                 </a>
             </div>
-            <nav>
+            <div class="topnav" id="sitenav">
+                
                 <a href="index.html" target="_self">Home Page</a>
+                <a href="aboutme.html" target="_self">About Me</a>
                 <div class="dropdown">
                     <button class="dropbtn">Projects</button> <!-- Add project links here when page is complete-->
                     <div class="dropdown-content"> 
@@ -29,8 +32,8 @@
                     </div>
                 </div>
                 <a href="hobbies.html">Hobbies</a>
-                <a href="tainfo.html">TA info</a>
-            </nav>
+                <a href="javascript:void(0);" class="hicon" onclick="myFunction()">&#9776;</a>
+            </div>
         
         </header>
         <main class="grid">

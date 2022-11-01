@@ -1,3 +1,4 @@
+-- COPYRIGHT FARSEEER INDUSTRIES 2022
 USE cwgames;
 
 -- Rating table inserts

@@ -1,4 +1,4 @@
--- Questions for Concept Workshop using cwgames
+-- Questions for Concept Workshop using cwgames -- COPYRIGHT FARSEEER INDUSTRIES 2022
 
 USE cwgames;
 --------------------------------------

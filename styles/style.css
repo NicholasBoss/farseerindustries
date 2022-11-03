@@ -422,7 +422,7 @@ footer h3 a:hover {
     header {
         width: 100%;
     }
-    .topnav a:not(:first-child), .dropdown .dropbtn {
+    .topnav a, .dropdown .dropbtn {
         display: none;
       }
       .topnav a.hicon {

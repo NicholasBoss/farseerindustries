@@ -537,6 +537,7 @@ footer h3 a:hover {
         grid-row: 2/3;
         margin-top: 10px;
         width: 100%;
+        height: 500px;
         padding: auto;
     }
 

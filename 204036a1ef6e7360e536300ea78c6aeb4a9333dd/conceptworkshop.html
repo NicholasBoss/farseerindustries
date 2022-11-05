@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    <title>Concept Workshop</title>
-</head>
-<body>
-    <h1>Concept Workshop Student Page</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="../assets/favicon.ico"
+			type="image/x-icon"
+		/>
+		<title>Concept Workshop</title>
 
-    <p>INSTRUCTOR NOTE: Only download the files when prompted. Do not dowload them beforehand.</p>
-    
-    <h2>CW Game Data</h2>
+		<link rel="stylesheet" href="../styles/style.css" />
+	</head>
+	<body>
+		<h1>Concept Workshop Student Page</h1>
 
-    <a href="https://docs.google.com/spreadsheets/d/1HK5V1lBTZY6RILJXMoi2IUhHlLKkLW20fz7-ook09o0/edit#gid=0">Game Data</a>
+		<p>
+			INSTRUCTOR NOTE: Only download the files when prompted. Do not dowload
+			them beforehand.
+		</p>
 
-    <h2>CW Forward Engineering Code</h2>
+		<button class="accordion"><h2>CW Game Data</h2></button>
+		<div class="panel">
+			<a
+				href="https://docs.google.com/spreadsheets/d/1HK5V1lBTZY6RILJXMoi2IUhHlLKkLW20fz7-ook09o0/edit#gid=0"
+				>Game Data</a
+			>
+		</div>
 
-    <a href="../files/cwgamesFEscript.sql" download="cwgamesFEscript.sql">Download CW FE Code</a>
+		<button class="accordion"><h2>CW Forward Engineering Code</h2></button>
+		<div class="panel">
+			<a href="../files/cwgamesFEscript.sql" download="cwgamesFEscript.sql"
+				>Download CW FE Code</a
+			>
+		</div>
 
-    <h2>CW Games Inserts</h2>
+		<button class="accordion"><h2>CW Games Inserts</h2></button>
+		<div class="panel">
+			<a href="../files/cwgamesinserts.sql" download="cwgamesinserts.sql"
+				>Download CW Games Inserts</a
+			>
+		</div>
 
-    <a href="../files/cwgamesinserts.sql" download="cwgamesinserts.sql">Download CW Games Inserts</a>
+		<button class="accordion"><h2>CW Games Selects</h2></button>
+		<div class="panel">
+			<a href="../files/cwgamesselects.sql" download="cwgamesselects.sql"
+				>Download CW Games Selects</a
+			>
+		</div>
 
-    <h2>CW Games Selects</h2>
+		<p>
+			ALL FILES ARE COPYRIGHT PROTECTED. DO NOT DISTRIBUTE THESE FILES UNLESS
+			YOU HAVE WRITTEN CONSENT BY THE MAKER.
+		</p>
+		<p>&copy; Farseer Industries - 2022</p>
+		<script>
+			var acc = document.getElementsByClassName("accordion");
+			var i;
 
-    <a href="../files/cwgamesselects.sql" download="cwgamesselects.sql">Download CW Games Selects</a>
-
-    <p>ALL FILES ARE COPYRIGHT PROTECTED. DO NOT DISTRIBUTE THESE FILES UNLESS YOU HAVE WRITTEN CONSENT BY THE MAKER.</p>
-    <p>&copy; Farseer Industries - 2022</p>
-</body>
+			for (i = 0; i < acc.length; i++) {
+				acc[i].addEventListener("click", function () {
+					this.classList.toggle("active");
+					var panel = this.nextElementSibling;
+					if (panel.style.maxHeight) {
+						panel.style.maxHeight = null;
+					} else {
+						panel.style.maxHeight = panel.scrollHeight + "px";
+					}
+				});
+			}
+		</script>
+	</body>
 </html>

@@ -423,11 +423,12 @@ footer h3 a:hover {
 
 /* CONCEPT WORKSHOP CSS */
 .accordion {
+    margin-left: 5%;
     background-color: #D5A021;
     color: #87F1FF;
     cursor: pointer;
     padding: 18px;
-    width: 50%;
+    width: 25%;
     border: none;
     text-align: left;
     outline: none;
@@ -440,6 +441,7 @@ footer h3 a:hover {
 }
 
 .panel {
+    margin-left: 10px;
     padding: 0 18px;
     background-color: #87F1FF;
     max-height: 0;

@@ -427,7 +427,7 @@ footer h3 a:hover {
     color: #87F1FF;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 50%;
     border: none;
     text-align: left;
     outline: none;
@@ -436,14 +436,26 @@ footer h3 a:hover {
 
 .active, .accordion:hover {
     background-color: #396E94;
+    color: darkmagenta;
 }
 
 .panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #87F1FF;
     max-height: 0;
     overflow: hidden;
+    width: 50%;
     transition: max-height 0.2s ease-out;
+}
+
+.panel a {
+    text-decoration: none;
+    color: black;
+}
+
+.panel a:hover {
+    color: #FB62F6;
+    background-color: #396E94;
 }
 
 .accordion::after {

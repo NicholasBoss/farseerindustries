@@ -20,11 +20,13 @@
     }
     else if (x == "admin" && y == "admin"){ // if login successful open next page
       alert("Login Successful"); 
-      // close alert box
-      
       return true;
       
-    } else { // if login unsuccessful, clear fields, set cursor in username field and alert user
+    }
+    else if (x == 'admin' && y == 'student'){
+      alert("Login Successful");
+    }
+    else { // if login unsuccessful, clear fields, set cursor in username field and alert user
       alert("Login Failed");
       document.getElementById("name").value = "";
       document.getElementById("password").value = "";
@@ -33,7 +35,24 @@
     }
   }
   </script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  
+<body>
+    <form name="myForm" onsubmit="return validateForm()">
+        <div class="imgcontainer">
+          <img src="./assets/farseerindustrieslogo.png" alt="Avatar" class="avatar">
+        </div>
+        <h1>Concept Workshop Access</h1>
+        <div class="container">
+          <label for="name"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="name" required>
+          <br>
+          <label for="psw"><b>Password</b></label>
+          <input id="password" type="password" placeholder="Enter Password" name="password" required>
+          <br>
+          <button id="loginbutton" class="submit" type="submit">Login</button>
+        </div>
+      </form>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 	<script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
   <script>
@@ -57,7 +76,7 @@
 			error : function(xhr, ajaxOptions, thrownError) {
 
 
-				parent.location.hash= hash;
+				// parent.location.hash= hash;
 
 				//$("#wrongPassword").show();
 				$("#password").attr("placeholder","wrong password");
@@ -79,22 +98,5 @@
 	$("#password").focus();
 
   </script>
-<body>
-    <form name="myForm" onsubmit="return validateForm()">
-        <div class="imgcontainer">
-          <img src="./assets/farseerindustrieslogo.png" alt="Avatar" class="avatar">
-        </div>
-        <h1>Concept Workshop Access</h1>
-        <div class="container">
-          <label for="name"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="name" required>
-          <br>
-          <label for="psw"><b>Password</b></label>
-          <input id="password" type="password" placeholder="Enter Password" name="password" required>
-          <br>
-          <button id="loginbutton" class="submit" type="submit">Login</button>
-        </div>
-      </form>
-      
 </body>
 </html>

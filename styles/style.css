@@ -294,7 +294,7 @@ main section img {
 .ta-specific {
     grid-column: 3/5;
     grid-row: 2/3;
-    margin-top: 550px;
+    margin-top: 600px;
     width: 100%;
     padding: auto;
 }

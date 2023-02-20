@@ -1,9 +1,8 @@
--- COPYRIGHT FARSEEER INDUSTRIES 2022
 USE cwgames;
 
 -- Rating table inserts
-INSERT INTO ratings
-(ratingLevel)
+INSERT INTO rating
+(rating_level)
 VALUES
 ('E'),
 ('E10+'),
@@ -12,8 +11,8 @@ VALUES
 ('NR');
 
 -- Game table inserts
-INSERT INTO games
-(gameTitle, releaseDate, ratingId)
+INSERT INTO game
+(game_title, release_date, rating_id)
 VALUES
 ('Assassins Creed: Black Flag','2013-10-29',4),
 ('Legend of Zelda: Twilight Princess','2006-11-19',3),
@@ -35,8 +34,8 @@ VALUES
 ('Elder Scrolls V: Skyrim Special Edition','2011-11-11',4);
 
 -- Genre inserts
-INSERT INTO genres
-( genreType )
+INSERT INTO genre
+( genre_type )
 VALUES
 ('Action'),
 ('Adventure'),
@@ -52,16 +51,16 @@ VALUES
 ('Fantasy');
 
 -- Owner inserts
-INSERT INTO owners
-(firstName, lastName)
+INSERT INTO owner
+(first_name, last_name)
 VALUES
-('Christian','Mijangos'),
 ('Nick','Boss'),
-('Austin','Longhurst');
+('Austin','Longhurst'),
+('Christian','Mijangos');
 
 -- Platform inserts
-INSERT INTO platforms
-(platformName)
+INSERT INTO platform
+(platform_name)
 VALUES
 ('PC'),
 ('Wii'),
@@ -72,8 +71,8 @@ VALUES
 ('3DS');
 
 -- Company inserts
-INSERT INTO companies
-(companyName, isDeveloper, isPublisher)
+INSERT INTO company
+(company_name, is_developer, is_publisher)
 VALUES
 ('Ubisoft',1,0),
 ('Nintendo',1,1),
@@ -91,8 +90,8 @@ VALUES
 ('Bethesda',1,1);
 
 -- Price inserts
-INSERT INTO prices
-( priceValue )
+INSERT INTO price
+( price_value )
 VALUES
 (16.95),
 (44.99),
@@ -109,8 +108,8 @@ VALUES
 (25.99);
 
 -- gameCompany
-INSERT INTO gameCompanies
-(gameId, companyId)
+INSERT INTO game_company
+(game_id, company_id)
 VALUES
 (1,1),
 (2,2),
@@ -135,8 +134,8 @@ VALUES
 (18,14);
 
 -- gameGenre inserts
-INSERT INTO gameGenres
-(gameId,genreId)
+INSERT INTO game_genre
+(game_id, genre_id)
 VALUES
 (1,1),
 (1,2),
@@ -183,8 +182,8 @@ VALUES
 (18,12);
 
 -- gamePlatform inserts
-INSERT INTO gamePlatforms
-(gameId, platformId, priceId, ownerId, hasPlayed)
+INSERT INTO game_platform
+(game_id, platform_id, price_id, owner_id, has_played)
 VALUES
 (1,1,1,1,1),
 (2,2,2,1,1),

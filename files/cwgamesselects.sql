@@ -54,7 +54,7 @@ USE cwgames;
 --------------------------------------
 -- Question 6
 -- Difficulty: Hard
--- Practice
+-- Example
 --------------------------------------
 -- How long have the games been around? 
 -- Round the date to the nearest year, add 'years' to the end of the number given and give an alias to the column name

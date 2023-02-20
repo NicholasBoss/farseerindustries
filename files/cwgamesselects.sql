@@ -9,7 +9,7 @@ USE cwgames;
 -- Difficulty: Easy
 -- Practice
 --------------------------------------
--- What are the titles of the games and when were they released?
+-- What are the titles of the games and when were they released? Which is the oldest game?
 
 
 --------------------------------------
@@ -58,7 +58,7 @@ USE cwgames;
 --------------------------------------
 -- How long have the games been around? 
 -- Round the date to the nearest year, add 'years' to the end of the number given and give an alias to the column name
--- add release date at the end to double check our work
+-- Add release date at the end to double check our work
 
 
 --------------------------------------
@@ -85,7 +85,7 @@ USE cwgames;
 -- Difficulty: Hard
 -- Example
 --------------------------------------
---  Find all game companies that have charged more than $50 for a game, with no duplicates
+--  Find all game companies that have charged more than $50 for a game. What are the games and their prices?
 
 
 --------------------------------------
@@ -103,7 +103,9 @@ USE cwgames;
 -- Difficulty: Hard
 -- Example
 --------------------------------------
--- What is the largest city in the country of Argentina, what is its population, what language does the people speak and how many speak that language (percent)?
--- Sort them by population greatest to least and format the population and percentage to be interpretable
--- Limit to the top 3 results
+-- What is the largest city in the country of Argentina? What is the population of that city? What percent of the population speak that language?
+-- Provide the city name, population, and percentage of the population that speaks the language in that city.
+-- Sort them by population from greatest to least.
+-- Format the population and concat '%' to the percentage.
+-- Limit to the top 3 results.
 

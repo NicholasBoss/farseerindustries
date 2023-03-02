@@ -35,7 +35,7 @@ USE cwgames;
 
 --------------------------------------
 -- Question 4
--- Difficulty: Easy
+-- Difficulty: Medium
 -- Practice
 --------------------------------------
 -- Get all rows of the game table with a single column called 'Game Name - Date' 
@@ -46,7 +46,7 @@ USE cwgames;
 
 --------------------------------------
 -- Question 5
--- Difficulty: Medium
+-- Difficulty: Hard
 -- Example
 --------------------------------------
 -- You and a friend want to play through all of your games, 

@@ -116,9 +116,9 @@ USE cwgames;
 -- Example
 --------------------------------------
 -- What is the largest city in the country of Argentina? 
--- What is the population of that city? 
+-- What is the population of that city and what language do they speak? 
 -- What percent of the population speak that language?
--- Provide the city name, population, 
+-- Provide the city name, population, language
 -- and percentage of the population that speaks the language in that city.
 -- Sort them by population from greatest to least.
 -- Format the population and concat '%' to the percentage.

@@ -329,7 +329,16 @@ footer {
     display: flex;
     justify-content: space-around;
 }
-
+footer nav a{
+    float: right;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 35px;
+    color: black;
+    font-size: 22px;
+}
 footer a {
     text-decoration: none;
     color: black;
@@ -616,6 +625,12 @@ footer h3 a:hover {
 
     footer {
         margin-top: 25px;
+    }
+    nav {
+        display: flex;
+    }
+    footer nav a {
+        padding: 10px;
     }
     html {
         margin: 0;

@@ -8,7 +8,7 @@ This project included making a webpage for my website that is currently under co
 
 Visual Studio Code
 
-HTML, CSS
+HTML, CSS, JavaScript
 
 GitHub Pages
 
@@ -20,5 +20,5 @@ GitHub Pages
 
 # Future Work
 
-* Create  more pages and finish my website
+* Create more pages and finish my website
 * Add more photos and organize the content of my webpages

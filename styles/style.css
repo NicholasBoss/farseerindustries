@@ -44,6 +44,11 @@ h2 {
     margin: 0;
 }
 
+iframe {
+    width: 560px;
+    height: 315px;
+}
+
 header {
     text-align: center;
     background-color: var(--secondary-color);

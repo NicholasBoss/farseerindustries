@@ -243,6 +243,7 @@ main section img {
     grid-row: 2/3;
     font-size: 22px;
     margin-top: 60px;
+    margin-left: 20px;
 }
 
 .organabt {
@@ -256,6 +257,7 @@ main section img {
     grid-row: 4/5;
     font-size: 22px;
     margin-top: 60px;
+    margin-left: 20px;
 }
 /* .resume{
     grid-column: 8/9;

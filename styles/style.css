@@ -1,3 +1,7 @@
+/* Table of Contents */
+
+/* Root selector for  */
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=EB+Garamond&display=swap');
 /* Bootstrap ui framework */
 :root {
@@ -648,7 +652,7 @@ footer h3 a:hover {
     .widget {
         grid-column: 1/5;
         grid-row: 2/3;
-        margin-top: 10px;
+        margin: 10px auto;
         width: 90%;
         height: 500px;
         padding: inherit;

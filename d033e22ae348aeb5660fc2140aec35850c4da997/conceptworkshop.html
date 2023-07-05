@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/style.css">
+	<script src="../scripts/accordion.js" defer></script>
     <title>Concept Workshop</title>
 </head>
 <body>
@@ -49,21 +50,5 @@
 			YOU HAVE WRITTEN CONSENT BY THE MAKER.
 		</p>
 		<p>&copy; Farseer Industries - 2023</p>
-		<script>
-			var acc = document.getElementsByClassName("accordion");
-			var i;
-
-			for (i = 0; i < acc.length; i++) {
-				acc[i].addEventListener("click", function () {
-					this.classList.toggle("active");
-					var panel = this.nextElementSibling;
-					if (panel.style.maxHeight) {
-						panel.style.maxHeight = null;
-					} else {
-						panel.style.maxHeight = panel.scrollHeight + "px";
-					}
-				});
-			}
-		</script>
 </body>
 </html>

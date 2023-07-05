@@ -20,5 +20,5 @@ GitHub Pages
 
 # Future Work
 
-* Create more pages and finish my website
 * Add more photos and organize the content of my webpages
+* Add links to personal GitHub and LinkedIn

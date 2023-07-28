@@ -6,9 +6,9 @@
 /* Bootstrap ui framework */
 :root {
     /* change the values below to your colors from your palette */
-    --primary-color: #87F1FF  ;
-    --secondary-color: #D5A021 ;
-    --accent1-color: #FB62F6 ;
+    --primary-color: #87F1FF;
+    --secondary-color: #D5A021;
+    --accent1-color: #FB62F6;
     --accent2-color: #396E94;
   
     /* change the values below to your chosen font(s) */
@@ -21,10 +21,10 @@
     --paragraph-color-on-white: #396E94; /* paragraph text on a white background */ 
     --paragraph-color-on-color: white; /* paragraph text on a colored background */ 
     --paragraph-background-color: #396E94  ;
-    --nav-link-color: #396E94;
-    --nav-background-color: #D5A021;
-    --nav-hover-link-color: #FB62F6;
-    --nav-hover-background-color: #396E94;
+    --nav-link-color: var(--accent2-color);
+    --nav-background-color: var(--secondary-color);
+    --nav-hover-link-color: var(--accent1-color);
+    --nav-hover-background-color: var(--accent2-color);
   }
 
 #content {

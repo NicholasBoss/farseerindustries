@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `cwgames`.`rating` ;
 
 CREATE TABLE IF NOT EXISTS `cwgames`.`rating` (
   `rating_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `rating_level` ENUM('E', 'E10+', 'T', 'M', 'NR') NOT NULL COMMENT 'ESRB rating system',
+  `rating_level` VARCHAR(4) NOT NULL COMMENT 'ESRB rating system',
   PRIMARY KEY (`rating_id`))
 ENGINE = InnoDB;
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `cwgames`.`game` (
   `release_date` DATE NULL,
   `rating_id` INT UNSIGNED NULL,
   PRIMARY KEY (`game_id`),
-  INDEX `fk_game_rating1_idx` (`rating_id` ASC) VISIBLE,
+  INDEX `game_rating_idx` (`rating_id` ASC) VISIBLE,
   CONSTRAINT `game_fk1`
     FOREIGN KEY (`rating_id`)
     REFERENCES `cwgames`.`rating` (`rating_id`)
@@ -122,10 +122,10 @@ CREATE TABLE IF NOT EXISTS `cwgames`.`game_platform` (
   `price_id` INT UNSIGNED NULL,
   `has_played` TINYINT NULL,
   PRIMARY KEY (`game_id`, `platform_id`, `owner_id`),
-  INDEX `fk_gameplatform_platform1_idx` (`platform_id` ASC) VISIBLE,
-  INDEX `fk_gameplatform_game1_idx` (`game_id` ASC) VISIBLE,
-  INDEX `fk_game_platform_price1_idx` (`price_id` ASC) VISIBLE,
-  INDEX `fk_game_platform_owner1_idx` (`owner_id` ASC) VISIBLE,
+  INDEX `game_platform_idx1` (`platform_id` ASC) VISIBLE,
+  INDEX `gameplatform_idx2` (`game_id` ASC) VISIBLE,
+  INDEX `game_platform_idx3` (`price_id` ASC) VISIBLE,
+  INDEX `game_platform_idx4` (`owner_id` ASC) VISIBLE,
   CONSTRAINT `game_platform_fk1`
     FOREIGN KEY (`game_id`)
     REFERENCES `cwgames`.`game` (`game_id`)
@@ -158,8 +158,8 @@ CREATE TABLE IF NOT EXISTS `cwgames`.`game_genre` (
   `game_id` INT UNSIGNED NOT NULL,
   `genre_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`game_id`, `genre_id`),
-  INDEX `fk_gamegenre_genre1_idx` (`genre_id` ASC) VISIBLE,
-  INDEX `fk_gamegenre_game1_idx` (`game_id` ASC) VISIBLE,
+  INDEX `game_genre_idx1` (`genre_id` ASC) VISIBLE,
+  INDEX `game_game_idx2` (`game_id` ASC) VISIBLE,
   CONSTRAINT `game_genre_fk1`
     FOREIGN KEY (`game_id`)
     REFERENCES `cwgames`.`game` (`game_id`)
@@ -182,8 +182,8 @@ CREATE TABLE IF NOT EXISTS `cwgames`.`game_company` (
   `game_id` INT UNSIGNED NOT NULL,
   `company_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`game_id`, `company_id`),
-  INDEX `fk_gamecompany_company1_idx` (`company_id` ASC) VISIBLE,
-  INDEX `fk_gamecompany_game1_idx` (`game_id` ASC) VISIBLE,
+  INDEX `game_company_idx1` (`company_id` ASC) VISIBLE,
+  INDEX `game_company_idx2` (`game_id` ASC) VISIBLE,
   CONSTRAINT `game_company_fk1`
     FOREIGN KEY (`game_id`)
     REFERENCES `cwgames`.`game` (`game_id`)

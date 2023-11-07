@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `cwgames`.`game_platform` (
   `has_played` TINYINT NULL,
   PRIMARY KEY (`game_id`, `platform_id`, `owner_id`),
   INDEX `game_platform_idx1` (`platform_id` ASC) VISIBLE,
-  INDEX `gameplatform_idx2` (`game_id` ASC) VISIBLE,
+  INDEX `game_platform_idx2` (`game_id` ASC) VISIBLE,
   INDEX `game_platform_idx3` (`price_id` ASC) VISIBLE,
   INDEX `game_platform_idx4` (`owner_id` ASC) VISIBLE,
   CONSTRAINT `game_platform_fk1`

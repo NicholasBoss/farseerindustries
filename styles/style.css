@@ -357,7 +357,7 @@ main section img {
 footer {
     text-align: center;
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: black;
     padding: 25px 50px;
     margin-top: 200px;
     align-items: center;
